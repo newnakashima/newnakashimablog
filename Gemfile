@@ -42,6 +42,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'sqlite3'
 end
 
 group :development do

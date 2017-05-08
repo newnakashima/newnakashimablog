@@ -30,8 +30,8 @@ class ArticlesController < ApplicationController
 
   def hatena
     @consumer = OAuth::Consumer.new(
-      env.CONSUMER_KEY,
-      env.CONSUMER_SECRET,
+      ENV['CONSUMER_KEY'],
+      ENV['CONSUMER_SECRET'],
       :site => '',
       :request_token_path => 'https://www.hatena.com/oauth/initiate',
       :request_token_path => 'https://www.hatena.com/oauth/token',

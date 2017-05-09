@@ -1,0 +1,19 @@
+<p>
+  <h1><%= @article.title %></h1>
+  <h6><%= @article.created_at %></h6>
+</p>
+
+<div class="blog-post">
+  <%= nl2br @article.text %>
+</div>
+
+<h2>コメント</h2>
+<%= render @article.comments %>
+
+<h2>コメントを書き込む</h2>
+<%= render 'comments/form '%>
+
+<% if loggedIn? %>
+  <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
+<%= link_to 'Back', article_path %>

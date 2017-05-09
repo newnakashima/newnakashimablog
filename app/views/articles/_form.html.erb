@@ -1,0 +1,34 @@
+<%= form_for @articles do |f| %>
+  <% if @artcle.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "errors") %> 入力値に誤りがあります。
+      </h2>
+      <ul>
+        <%= @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "article_title" %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text, class: "article_text" %>
+  </p>
+
+  <p>
+    <%= f.label :private %><br>
+    <%= f.check_box :private %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

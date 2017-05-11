@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'oauth'
 
+gem 'rb-readline'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,6 +1,6 @@
 require 'socket'
 require 'net/http'
-require 'url'
+require 'uri'
 require 'erb'
 require 'oauth'
 
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
       ENV['CONSUMER_SECRET'],
       :site => '',
       :request_token_path => 'https://www.hatena.com/oauth/initiate',
-      :request_token_path => 'https://www.hatena.com/oauth/token',
+      :access_token_path => 'https://www.hatena.com/oauth/token',
       :authorize_path => 'https://www.hatena.ne.jp/oauth/authorize'
     )
     puts request.host_with_port

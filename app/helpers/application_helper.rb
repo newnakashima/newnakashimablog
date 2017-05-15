@@ -7,6 +7,10 @@ module ApplicationHelper
     return Digest::MD5.new.update(phrase.to_s)
   end
 
+  def getUser(user_name)
+    return User.find_by(name: user_name)
+  end
+
   def login?(user, pass)
     if user != nil
       return md5_hash(pass).to_s == user.pass

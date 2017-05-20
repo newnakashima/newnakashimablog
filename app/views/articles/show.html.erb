@@ -11,7 +11,9 @@
 <%= render @article.comments %>
 
 <h2>コメントを書き込む</h2>
-<%= render 'comments/form' %>
+<div class="article-comment">
+  <%= render 'comments/form' %>
+</div>
 
 <% if loggedIn? %>
   <%= link_to 'Edit', edit_article_path(@article) %>

@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     )
     puts request.host_with_port
     request_token = @consumer.get_request_token(
-      { :oauth_callback => 'http://' + requuest.host_with_port + '/callback' },
+      { :oauth_callback => 'http://' + request.host_with_port + '/callback' },
       :scope => 'read_public,write_public')
 
     session[:request_token] = request_token.token

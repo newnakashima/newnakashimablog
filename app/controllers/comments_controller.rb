@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+
+  include ApplicationHelper
+  before_action :request_login, only: [:create, :destroy]
+  
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)

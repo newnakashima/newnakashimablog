@@ -1,21 +1,26 @@
-<p>
+<div>
   <h1><%= @article.title %></h1>
-  <h6><%= @article.created_at %></h6>
-</p>
+  <h6 class="date-time"><%= @article.created_at %></h6>
+</div>
+
+<% if loggedIn? %>
+  <%= link_to '編集', edit_article_path(@article) %>
+<% end %>
 
 <div class="blog-post">
   <%= nl2br @article.text %>
 </div>
 
 <h2>コメント</h2>
-<%= render @article.comments %>
+<% if @article.comments.length != 0 %>
+  <%= render @article.comments %>
+<% else %>
+  コメントはありません。
+<% end %>
 
 <h2>コメントを書き込む</h2>
 <div class="article-comment">
   <%= render 'comments/form' %>
 </div>
 
-<% if loggedIn? %>
-  <%= link_to 'Edit', edit_article_path(@article) %>
-<% end %>
-<%= link_to 'Back', articles_path %>
+<%= link_to '戻る', articles_path %>

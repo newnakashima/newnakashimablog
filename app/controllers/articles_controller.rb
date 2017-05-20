@@ -7,7 +7,7 @@ require 'oauth'
 class ArticlesController < ApplicationController
   include ApplicationHelper
 
-  before_action :request_login, only: [:edit, :new, :destroy, :hatena]
+  before_action :request_login, only: [:edit, :new, :create, :update, :destroy, :hatena]
 
   def request_login
     if !loggedIn?

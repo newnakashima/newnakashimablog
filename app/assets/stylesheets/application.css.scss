@@ -14,14 +14,16 @@
  *= require_self
  */
 
+$font-color: black;
+
 header {
   position: relative;
   padding-left: 2rem;
-  nav {
-    position: absolute;
-    right: 2rem;
-    top: 0;
-  }
+}
+
+.webtitle {
+  text-decoration: none;
+  color: $font-color;
 }
 
 nav ul li {
@@ -34,12 +36,50 @@ nav ul li {
 #main-content {
   width: 80%;
   margin: auto;
-  td .article_list_title {
-    margin-top: 0;
+}
+.article_list_title {
+  margin-top: 0;
+}
+.title-input {
+  input[type="text"] {
+    width: 100%;
+    font-size: 1rem;
+    border: solid 1px black;
+    border-radius: 3px;
   }
+}
+.content-input {
+  textarea {
+    width: 100%;
+    height: 500px;
+    font-size: 1rem;
+    border-radius: 3px;
+  }
+}
+
+.submit {
+  input[type="submit"] {
+  }
+}
+
+.button {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  background: transparent;
 }
 
 footer {
   text-align: right;
-  padding: 2rem;
+  padding: 0 2rem;
+}
+
+@media screen and(min-width: 1024px) {
+  header {
+    nav {
+      position: absolute;
+      right: 2rem;
+      top: 0;
+    }
+  }
 }

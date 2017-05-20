@@ -12,23 +12,22 @@
     </div>
   <% end %>
 
-  <p>
+  <div class="title-input">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "article_title" %>
-  </p>
+  </div>
 
-  <p>
+  <div class="content-input">
     <%= f.label :text %><br>
     <%= f.text_area :text, class: "article_text" %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label :private %><br>
-    <%= f.check_box :private %>
-  </p>
+  <div class="checkbox">
+    <%= f.label :private %>: <%= f.check_box :private %>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="submit">
+    <%= f.submit "作成", class: "button" %>
+  </div>
 
 <% end %>

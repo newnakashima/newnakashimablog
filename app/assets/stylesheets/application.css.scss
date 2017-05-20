@@ -20,9 +20,10 @@ li {
 
 header {
   position: relative;
+  padding-left: 2rem;
   nav {
     position: absolute;
-    right: 1em;
+    right: 2rem;
     top: 0;
   }
 }
@@ -32,4 +33,14 @@ nav ul li {
   &:not(:last-child):after {
     content: ' | ';
   }
+}
+
+#main-content {
+  width: 80%;
+  margin: auto;
+}
+
+footer {
+  text-align: right;
+  padding: 2rem;
 }

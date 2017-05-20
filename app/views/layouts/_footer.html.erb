@@ -1,7 +1,16 @@
 <footer>
-  <% if loggedIn? %>
-    <%= link_to 'ログアウト', logout_path %>
-  <% else %>
-    <%= link_to 'ログイン', login_path %>
-  <% end %>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'About', '/about' %>
+      </li>
+      <li>
+        <% if loggedIn? %>
+          <%= link_to 'ログアウト', logout_path %>
+        <% else %>
+          <%= link_to 'ログイン', login_path %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
 </footer>

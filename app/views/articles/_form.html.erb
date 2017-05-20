@@ -1,5 +1,5 @@
-<%= form_for @articles do |f| %>
-  <% if @artcle.errors.any? %>
+<%= form_for @article do |f| %>
+  <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@article.errors.count, "errors") %> 入力値に誤りがあります。

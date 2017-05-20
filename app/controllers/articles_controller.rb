@@ -5,8 +5,15 @@ require 'erb'
 require 'oauth'
 
 class ArticlesController < ApplicationController
-
   include ApplicationHelper
+
+  before_action :request_login, only: [:edit, :new, :destroy, :hatena]
+
+  def request_login
+    if !loggedIn?
+      redirect_to login_path
+    end
+  end
 
   def index
     if loggedIn?

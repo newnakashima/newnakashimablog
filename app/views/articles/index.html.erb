@@ -3,15 +3,12 @@
   <%= link_to '新規作成', new_article_path %>
 <% end %>
 <table>
-  <tr>
-    <th>タイトル</th>
-    <th></th>
-    <th colspan="2"></th>
-  </tr>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
-      <td><%= link_to '開く', article_path(article) %></td>
+      <td>
+        <%= article.created_at.strftime "%Y/%m/%d" %><br>
+        <h3 class="article_list_title"><%= link_to article.title, article_path(article) %></h3>
+      </td>
       <% if loggedIn? %>
         <td><%= link_to '編集', edit_article_path(article) %></td>
         <td>

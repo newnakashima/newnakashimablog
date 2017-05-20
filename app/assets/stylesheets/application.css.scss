@@ -14,10 +14,6 @@
  *= require_self
  */
 
-li {
-  list-style:none;
-}
-
 header {
   position: relative;
   padding-left: 2rem;
@@ -38,6 +34,9 @@ nav ul li {
 #main-content {
   width: 80%;
   margin: auto;
+  td .article_list_title {
+    margin-top: 0;
+  }
 }
 
 footer {

@@ -1,6 +1,6 @@
 <div>
   <h1><%= @article.title %></h1>
-  <h6 class="date-time"><%= @article.created_at %></h6>
+  <h6 class="date-time"><%= @article.created_at.in_time_zone("Tokyo") %></h6>
 </div>
 
 <% if loggedIn? %>

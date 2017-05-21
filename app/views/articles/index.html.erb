@@ -1,6 +1,6 @@
 <h1>記事一覧</h1>
 <% if loggedIn? %>
-  <%= button_tag "新規作成", href: new_article_path, class: "button" %>
+  <%= link_to "新規作成", new_article_path, class: "button" %>
 <% end %>
 <% @articles.each do |article| %>
   <%= link_to article_path(article), class: "article_link" do %>

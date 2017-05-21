@@ -1,3 +1,28 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-color: black;
+
+@mixin link {
+  display: block;
+  text-decoration: none;
+  color: $font-color;
+}
+
+.article_list_title {
+  a {
+    @include link;
+  }
+}
+
+.article_link {
+  @include link;
+}
+
+.article {
+  box-shadow: 1px 1px 3px;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 3px;
+}

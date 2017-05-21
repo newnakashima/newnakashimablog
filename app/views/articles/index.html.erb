@@ -1,25 +1,16 @@
 <h1>記事一覧</h1>
 <% if loggedIn? %>
-  <%= link_to '新規作成', new_article_path %>
+  <%= button_tag "新規作成", href: new_article_path, class: "button" %>
 <% end %>
-<table>
-  <% @articles.each do |article| %>
-    <tr>
-      <td>
-        <%= article.created_at.strftime "%Y/%m/%d" %><br>
-        <h3 class="article_list_title"><%= link_to article.title, article_path(article) %></h3>
-      </td>
-      <% if loggedIn? %>
-        <td><%= link_to '編集', edit_article_path(article) %></td>
-        <td>
-          <%= link_to '削除', article_path(article),
-          method: :delete,
-          data: { confirm: '本当によろしいですか？' } %>
-        </td>
-      <% end %>
-    </tr>
+<% @articles.each do |article| %>
+  <%= link_to article_path(article), class: "article_link" do %>
+    <article class="article">
+      <%= article.created_at.strftime "%Y/%m/%d" %><br>
+      <h3 class="article_list_title"><%= article.title %></h3>
+      <%= nl2br article.text %>
+    </article>
   <% end %>
-</table>
+<% end %>
 <%= link_to '戻る', '/' %>
 <% if loggedIn? %>
   <%= link_to 'hatenablog連携', '/hatena' %>

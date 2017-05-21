@@ -16,11 +16,6 @@
 
 $font-color: black;
 
-header {
-  position: relative;
-  padding-left: 2rem;
-}
-
 .webtitle {
   text-decoration: none;
   color: $font-color;
@@ -34,7 +29,7 @@ nav ul li {
 }
 
 #main-content {
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
 .date-time {
@@ -99,5 +94,9 @@ footer {
       right: 2rem;
       top: 0;
     }
+  }
+  #main-content {
+    width: 80%;
+    margin: auto;
   }
 }

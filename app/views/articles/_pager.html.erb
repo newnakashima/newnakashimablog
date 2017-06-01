@@ -1,0 +1,16 @@
+<div>
+  <nav>
+    <ul>
+      <%
+        if @page == nil
+          @page = 0
+        end
+      %>
+
+      <% if @page != 0 %>
+        <li><%= link_to "前のページ", "/articles/page/#{@page}" %></li>
+      <% end %>
+      <li><%= link_to "次のページ", "/articles/page/#{@page+2}" %></li>
+    </ul>
+  </nav>
+</div>

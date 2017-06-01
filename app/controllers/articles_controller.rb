@@ -6,6 +6,7 @@ require 'oauth'
 
 class ArticlesController < ApplicationController
   include ApplicationHelper
+  include ArticlesHelper
 
   before_action :request_login, only: [:edit, :new, :create, :update, :destroy, :hatena]
 
@@ -17,10 +18,29 @@ class ArticlesController < ApplicationController
 
   def index
     if loggedIn?
-      @articles = Article.all.order("created_at desc")
+      @articles = Article.limit(5).order("created_at desc")
     else
-      @articles = Article.where(private: false).order("created_at desc")
+      @articles = Article.where(private: false).limit(5).order("created_at desc")
     end
+  end
+
+  def page
+    if !validPage? params[:page]
+      index
+      render 'index'
+      return
+    end
+    @page = params[:page].to_i - 1 
+    offset = @page * 5 
+    if loggedIn?
+      @articles = Article.offset(offset).limit(5).order("created_at desc")
+    else
+      @articles = Article.where(private: false).offset(offset).limit(5).order("created_at desc")
+    end
+  end
+
+  def getOffset page
+    return (page.to_i - 1) * 5
   end
 
   def show

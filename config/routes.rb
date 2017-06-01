@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/articles/page/:page', to: 'articles#page'
   get '/about', to: 'about#index'
 
   get '/hatena', to: 'articles#hatena'

@@ -33,6 +33,8 @@ gem 'oauth'
 
 gem 'rb-readline'
 
+gem 'aws-sdk'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

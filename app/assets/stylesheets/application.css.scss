@@ -75,13 +75,13 @@ nav ul li {
 }
 .article-comment {
   .title-input {
+    width: 90%;
     input[type="text"] {
-      width: 50%;
     }
   }
   .content-input {
+    width: 90%;
     textarea {
-      width: 50%;
       height: 100px;
     }
   }

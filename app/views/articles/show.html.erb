@@ -11,7 +11,7 @@
 <% end %>
 
 <div class="blog-post">
-  <%= nl2br @article.text %>
+  <%= nl2br (translateImageTag @article.text) %>
 </div>
 
 <h2>コメント</h2>

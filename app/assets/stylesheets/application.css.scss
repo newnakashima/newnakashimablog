@@ -16,6 +16,10 @@
 
 $font-color: black;
 
+body {
+  margin: 0;
+}
+
 .webtitle {
   text-decoration: none;
   color: $font-color;
@@ -29,7 +33,7 @@ nav ul li {
 }
 
 #main-content {
-  width: 95%;
+  width: 100%;
   margin: auto;
 }
 .date-time {
@@ -98,5 +102,19 @@ footer {
   #main-content {
     width: 80%;
     margin: auto;
+    .blog-post {
+      .aws-image-full {
+        width: 125%;
+        margin: 0 -12.5%;
+      }
+      .aws-image {
+        width: 100%;
+      }
+    }
+  }
+  .article {
+    .aws-image-full {
+      width: 100%;
+    }
   }
 }

@@ -6,7 +6,7 @@
     <article class="article">
       <%= article.created_at.strftime "%Y/%m/%d" %><br>
       <h3 class="article_list_title"><%= article.title %></h3>
-      <%= nl2br article.text %>
+      <%= nl2br(translateImageTag article.text) %>
     </article>
   <% end %>
 <% end %>
